@@ -21,10 +21,15 @@ function App() {
     'Study'
   ]);
 
+  const handleAdd = (newTask) => {
+    //setTasks(tasks.concat(newTask))
+    setTasks([...tasks, newTask])
+  };
+
   return (
     <SafeAreaView>
-      <ToDoList tasks={ tasks }/>
-      <ToDoForm />
+      <ToDoList tasks={tasks}/>
+      <ToDoForm onAdd={handleAdd}/>
     </SafeAreaView>
   );
 }
