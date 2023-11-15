@@ -5,12 +5,14 @@ import {
   TextInput,
   Button
 } from 'react-native';
+import {useState} from 'react';
 
 function ToDoForm({onAdd}) {
-  const [taskText, setTaskText] = React.useState('');
+  const [taskText, setTaskText] = useState('');
 
   const handleAdd = () => {
     onAdd(taskText);
+    setTaskText('');
   }
 
 
